@@ -1,0 +1,408 @@
+/* ---------------------------------------------- */
+/* BASIC SETUP */
+/* ---------------------------------------------- */
+
+* { /*set all values to default because some browsers add margins automaticaly*/
+    margin: 0 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    background-color: white;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility; /*to render fonts in a perfect way*/
+}
+
+.clearfix {zoom:1} /* to clear the floats after an element and we add it to the ul of section-meals because the children li have the float */
+.clearfix::after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+/* ---------------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ---------------------------------------------- */
+
+.row { /*width of the website all content*/
+    max-width:2160px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.box {
+    padding: 2%;
+}
+
+/* ----- HEADINGS ----- */
+
+h1,
+h2,
+h3 { 
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin-top: 0;/* to get rid of a white margin in top that shows up in some browsers */
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%; /* we alrady have 20px for all our html doc bit here we precise we want 200% of the 20px */
+    word-spacing: 4px;
+    letter-spacing: 1px;
+
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 100%;
+    margin-bottom: 15px;
+}
+
+h2:after { /* to add an yellow line between h2 and the text */
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";
+    width: 100px;
+    margin: 0 auto; /* to make it centered */
+    margin-top: 30px;
+}
+
+/* ----- PARAGRAPHS ----- */
+
+.long-txt {
+    line-height: 145%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 145%;
+    text-align: justify;
+}
+
+/* ----- ICONS ----- */
+
+.big-icon {
+    font-size: 300%;
+    display: block;
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.small-icon {
+    display: inline-block; /* make them aligned to each other */
+    width: 30px;
+    text-align: center;
+    font-size: 120%;
+    margin-right: 10px;
+    color: #e67e22;
+     /* to align icons with text */
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+/* ----- LINKS ----- */
+
+a:link,
+a:active {
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent; /* to make the underline disappear we put transparent instead of color */
+    transition: border-bottom 0.2s , color 0.2s;
+}
+
+/* ----- BUTTONS ----- */
+
+.btn:link,
+.btn:visited /* means the button should look the same even after it's visisted */ {
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none; /* to get rid of the underline */
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s; /* when we hover on the button the background color will change smoothly in 0.2s */
+}
+
+.btn-full:link,
+.btn-full:visited {
+    background-color: #e67e22;
+    border: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 15px;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #e67e22;
+    color: #e67e22;
+}
+
+.btn:hover,
+.btn:active {
+    background-color: #cf6d17;
+    color: #fff;
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;
+}
+
+/* ---------------------------------------------- */
+/* HEADER */
+/* ---------------------------------------------- */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* to make the image fixed while scrolling the web page */
+    height: 100vh; /* it means show the image on the header by 100% of the view port.
+                    It will take the whole part we see first */
+    width: 100%;
+}
+
+.hero-text-box { /* to center h1 and the buttons on the header */
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* to translate the element half of its width and height up to the left */
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 30px;
+}
+
+.main-nav {
+    float: right;
+    list-style: none; /* to get rid of some default bullets we get with the nav list */
+    margin-top: 65px;
+}
+
+.main-nav li {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    color: #fff;
+    text-decoration: none; /* to get rid of the underline */
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+    padding: 5px 0;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+
+/* ---------------------------------------------- */
+/* FEATURES */
+/* ---------------------------------------------- */
+
+.section-features .long-txt {
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------------- */
+/* MEALS */
+/* ---------------------------------------------- */
+
+.section-meals {
+    padding: 0;
+}
+
+.meals-showcase {
+    list-style: none; /* to delet the default bullet points of the list */
+    width: 100%;
+    padding: 0;
+}
+
+.meals-showcase li {
+    display: block;
+    float: left; /* to show the images side by side instead of one under one */
+    width: 25%; /* to have 4 li elements inside of each row of the table */
+
+}
+
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.meal-photo img {
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.meal-photo img:hover {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+/* ---------------------------------------------- */
+/* HOW IT WORKS */
+/* ---------------------------------------------- */
+
+.section-steps {
+    background-color: rgb(233, 233, 233);
+}
+
+.steps-box:first-child {/* select each box individually */
+    text-align: right; /* to aligne the block not the text because there is no text */
+    padding-right: 3%;
+    margin-top: 30px;
+}
+
+.steps-box:last-child {/* select each box individually */
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen {
+    width: 40%;
+}
+
+.works-step {
+    margin-bottom: 50px;
+}
+
+.works-step:last-of-type { /* similar to last child */
+    margin-bottom: 80px;
+}
+
+.works-step div {
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    font-size: 150%;
+    margin-right: 25px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+    border: 0;
+
+}
+
+.btn-app img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+.steps-txt {
+    padding: 15px;
+}
+
+/* ---------------------------------------------- */
+/* CITIES */
+/* ---------------------------------------------- */
+
+.box img {
+    width: 100%; /* to make the img as large as the box */
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.city-feature {
+    margin-bottom: 15px;
+}
+
+/* ---------------------------------------------- */
+/* TESTIMONIAL */
+/* ---------------------------------------------- */
+
+.section-testimonial {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed; /* to make the image fixed while scrolling the web page */
+}
+
+.section-testimonial h2 {
+    margin-bottom: 100px;
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 170%; /* space between lines */
+    position: relative; /* because we put absolute in blockquote:before */
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 50px;
+    display: block;
+    font-style: normal;
+}
+
+blockquote:before {
+    content: "\201C";
+    color: #e67e22;
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -2%;
+}
+
+cite img {
+    border-radius: 50%;
+    height: 50px;
+    margin-right: 10px;
+    vertical-align: middle; /* to align text with images */
+}
