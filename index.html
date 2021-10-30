@@ -347,15 +347,17 @@
                 <form method="post" action="#" class="contact-form">
                     <div class="row">
                         <div class="col span-1-of-3">
-                            <label>Name</label>
+                            <label for="name">Name</label>
                         </div>
                         <div class="col span-2-of-3"> <!-- it means that this column will be twice as big as the previous column -->
                             <input type="text" name="name" id="name" placeholder="your name" required>
+                            <!-- we put id=name here because we want to link it with the label.
+                                so when we select the label in the page the input feald will be highlited -->
                         </div>
                     </div>
                     <div class="row">
                         <div class="col span-1-of-3">
-                            <label>Email</label>
+                            <label for="email">Email</label>
                         </div>
                         <div class="col span-2-of-3"> <!-- it means that this column will be twice as big as the previous column -->
                             <input type="email" name="email" id="email" placeholder="your email" required>
@@ -363,12 +365,39 @@
                     </div>
                     <div class="row">
                         <div class="col span-1-of-3">
-                            <label>How did you find us?</label>
+                            <label for="find-us">How did you find us?</label>
                         </div>
                         <div class="col span-2-of-3"> <!-- it means that this column will be twice as big as the previous column -->
                             <select name="find-us" id="find-us">
-                                <!-- HEEEEEEERE I STOPPED THE VIDEO GOT STUCKED-->
+                                <option value="friends" selected>Friends</option>
+                                <option value="search">Search engine</option>
+                                <option value="ad">Advertisement</option>
+                                <option value="other">Other</option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Newsletter</label>
+                        </div>
+                        <div class="col span-2-of-3"> <!-- it means that this column will be twice as big as the previous column -->
+                            <input type="checkbox" name="news" id="news"> Yes, please
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Drop us a line</label>
+                        </div>
+                        <div class="col span-2-of-3"> <!-- it means that this column will be twice as big as the previous column -->
+                            <textarea name="message" placeholder="Your message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3"> <!-- it means that this column will be twice as big as the previous column -->
+                            <input type="submit" value="Seend it!">
                         </div>
                     </div>
                 </form>
@@ -379,6 +408,6 @@
 
 <!--
 
-Newsletter
-Drop us a line
+
+
 -->
