@@ -1,0 +1,61 @@
+/* this is incomplet */
+
+/* it means that all the stylies
+inside of this block will be applied
+if the width of the devices is > 1023px and <= 1200px (big tablet to 1200px width) */
+@media only screen and (max-width: 1200px)  {
+   /* to center h1 and the buttons on the header */
+    .hero-text-box { 
+        width: 100%;
+        padding: 0 2%;
+    }
+
+    .row {padding: 0 2%;}
+    
+}
+
+
+/* it means that all the stylies
+inside of this block will be applied
+if the width of the devices is > 767px and <= 1023px (small to big tablet) */
+@media only screen and (max-width: 1023px)  {
+    body {font-size: 18px}
+    section {padding: 60px 0;}
+
+    .long-txt {
+        width: 80%;
+        margin-left: 10%;
+    }
+
+    .steps-box{ margin-top: 10px;}
+    .steps-box:last-child { margin-top: 10px;}
+    .works-step {margin-bottom: 40px;}
+    .works-step:last-of-type {margin-bottom: 60px;}
+
+    .app-screen {width: 50%;}
+
+    .small-icon {width: 17px; margin-right: 5px}
+
+    .city-feature {font-size: 90%;}
+
+    .plan-box {width: 100%; margin-left: 0%;}
+
+    .plan-price {font-size:  250%;}
+    .contact-form {width: 80%;}
+}
+
+
+/* it means that all the stylies
+inside of this block will be applied
+if the width of the devices is > 480px and <= 767px (small phones to small phones) */
+@media only screen and (max-width: 767px)  {
+
+}
+
+/* it means that all the stylies
+inside of this block will be applied
+if the width of the devices is <= 480px (small phones) */
+@media only screen and (max-width: 480px)  {
+
+}
+
